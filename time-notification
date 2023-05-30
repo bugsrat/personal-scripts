@@ -1,0 +1,3 @@
+dunst&
+d=$(date | sed 's/EEST //g')
+notify-send -t 3000 "$d"

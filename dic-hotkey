@@ -1,9 +1,11 @@
 # running dunst if it isnt running
 dunst&
+
 # taking the text selected by the mouse and storing it into a variable.
 x=$(xclip -o )
 
 # running the variable x into a dictionary and cleaning unwanted additional text with sed.
+# its better to have a custom data-dir just in case you want to use a diffrent dictionary when using sdcv interactively 
 y=$(sdcv -n --data-dir ~/Documents/dic/stardict-dictd_www.dict.org_gcide-2.4.2 $x | sed -n '5,$p')
 
 # using notify-send to send the notification.
